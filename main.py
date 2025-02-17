@@ -77,7 +77,7 @@ def train_and_evaluate(model, X_train, y_train, X_val, y_val, epochs=100, batch_
 def predict_and_save(model, df_test, test_ids, label_encoder, output_file):
     y_pred = np.argmax(model.predict(df_test), axis=1)
     y_pred_labels = label_encoder.inverse_transform(y_pred)
-    submission = pd.DataFrame({"ID_Siswa": test_ids, "Kategori_Gizi": y_pred_labels})
+    submission = pd.DataFrame({"ID": test_ids, "Kategori_Gizi_Prediksi": y_pred_labels})
     submission.to_csv(output_file, index=False, sep=';')
     print(f"Submission file saved as {output_file}")
 

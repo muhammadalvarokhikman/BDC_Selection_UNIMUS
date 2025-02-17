@@ -1,4 +1,4 @@
-ID_Siswa;Kategori_Gizi
+ID;Kategori_Gizi_Prediksi
 6253;Gizi Kurang
 4685;Gizi Lebih
 1732;Gizi Baik
@@ -330,7 +330,7 @@ ID_Siswa;Kategori_Gizi
 7754;Gizi Kurang
 4722;Gizi Lebih
 1651;Gizi Lebih
-4141;Gizi Kurang
+4141;Gizi Baik
 1618;Gizi Lebih
 2030;Gizi Lebih
 8518;Gizi Kurang
@@ -379,7 +379,7 @@ ID_Siswa;Kategori_Gizi
 3483;Gizi Lebih
 796;Gizi Baik
 1576;Gizi Lebih
-6177;Gizi Baik
+6177;Gizi Kurang
 6267;Gizi Baik
 2459;Gizi Lebih
 3313;Gizi Lebih
@@ -449,7 +449,7 @@ ID_Siswa;Kategori_Gizi
 5157;Gizi Lebih
 734;Gizi Lebih
 3527;Gizi Kurang
-569;Gizi Baik
+569;Gizi Kurang
 9188;Gizi Lebih
 2923;Gizi Kurang
 7912;Gizi Baik
@@ -738,7 +738,7 @@ ID_Siswa;Kategori_Gizi
 1331;Gizi Kurang
 2772;Gizi Lebih
 3687;Gizi Baik
-8284;Gizi Baik
+8284;Gizi Kurang
 5929;Gizi Kurang
 638;Gizi Lebih
 48;Gizi Kurang
@@ -880,7 +880,7 @@ ID_Siswa;Kategori_Gizi
 8366;Gizi Kurang
 1892;Gizi Baik
 5063;Gizi Kurang
-6121;Gizi Baik
+6121;Gizi Kurang
 564;Gizi Lebih
 292;Gizi Lebih
 4717;Gizi Kurang
@@ -952,7 +952,7 @@ ID_Siswa;Kategori_Gizi
 9710;Gizi Baik
 319;Gizi Lebih
 1146;Gizi Lebih
-5095;Gizi Baik
+5095;Gizi Lebih
 1394;Gizi Kurang
 6624;Gizi Kurang
 1502;Gizi Baik
@@ -1053,7 +1053,7 @@ ID_Siswa;Kategori_Gizi
 5214;Gizi Baik
 2246;Gizi Kurang
 1742;Gizi Lebih
-1021;Gizi Baik
+1021;Gizi Kurang
 706;Gizi Baik
 4295;Gizi Lebih
 5577;Gizi Lebih
@@ -1097,11 +1097,11 @@ ID_Siswa;Kategori_Gizi
 2686;Gizi Kurang
 8931;Gizi Kurang
 3459;Gizi Kurang
-4542;Gizi Baik
+4542;Gizi Kurang
 2179;Gizi Lebih
 4451;Gizi Baik
 3860;Gizi Lebih
-7624;Gizi Baik
+7624;Gizi Kurang
 7655;Gizi Kurang
 4520;Gizi Kurang
 2518;Gizi Kurang
@@ -1212,7 +1212,7 @@ ID_Siswa;Kategori_Gizi
 8651;Gizi Baik
 6775;Gizi Lebih
 6757;Gizi Lebih
-621;Gizi Lebih
+621;Gizi Baik
 2702;Gizi Baik
 2200;Gizi Lebih
 6197;Gizi Baik
@@ -1299,7 +1299,7 @@ ID_Siswa;Kategori_Gizi
 7566;Gizi Baik
 5530;Gizi Lebih
 7855;Gizi Kurang
-4933;Gizi Baik
+4933;Gizi Lebih
 5160;Gizi Lebih
 9716;Gizi Lebih
 3847;Gizi Lebih
@@ -1341,7 +1341,7 @@ ID_Siswa;Kategori_Gizi
 7064;Gizi Kurang
 7163;Gizi Kurang
 7372;Gizi Lebih
-6829;Gizi Baik
+6829;Gizi Kurang
 3616;Gizi Kurang
 4657;Gizi Baik
 6976;Gizi Lebih
@@ -1459,7 +1459,7 @@ ID_Siswa;Kategori_Gizi
 3468;Gizi Lebih
 1314;Gizi Kurang
 8606;Gizi Baik
-2070;Gizi Baik
+2070;Gizi Kurang
 2983;Gizi Baik
 5915;Gizi Lebih
 9171;Gizi Lebih
@@ -1486,12 +1486,12 @@ ID_Siswa;Kategori_Gizi
 4289;Gizi Lebih
 8571;Gizi Lebih
 9713;Gizi Kurang
-1544;Gizi Kurang
+1544;Gizi Baik
 9536;Gizi Kurang
 3854;Gizi Kurang
 555;Gizi Lebih
 6366;Gizi Kurang
-512;Gizi Lebih
+512;Gizi Baik
 3207;Gizi Lebih
 8085;Gizi Lebih
 968;Gizi Lebih
@@ -1504,7 +1504,7 @@ ID_Siswa;Kategori_Gizi
 8871;Gizi Baik
 6963;Gizi Lebih
 2089;Gizi Lebih
-8500;Gizi Baik
+8500;Gizi Lebih
 6163;Gizi Lebih
 3211;Gizi Baik
 9201;Gizi Baik
@@ -1512,7 +1512,7 @@ ID_Siswa;Kategori_Gizi
 1110;Gizi Baik
 5729;Gizi Lebih
 7830;Gizi Lebih
-1039;Gizi Baik
+1039;Gizi Lebih
 1195;Gizi Kurang
 4475;Gizi Baik
 9875;Gizi Lebih
@@ -1596,7 +1596,7 @@ ID_Siswa;Kategori_Gizi
 3398;Gizi Lebih
 3066;Gizi Baik
 767;Gizi Lebih
-7079;Gizi Baik
+7079;Gizi Lebih
 5280;Gizi Baik
 4150;Gizi Baik
 1145;Gizi Kurang
@@ -1787,7 +1787,7 @@ ID_Siswa;Kategori_Gizi
 4192;Gizi Kurang
 9143;Gizi Lebih
 5539;Gizi Lebih
-2693;Gizi Baik
+2693;Gizi Lebih
 5341;Gizi Lebih
 9918;Gizi Baik
 7671;Gizi Lebih
@@ -1827,7 +1827,7 @@ ID_Siswa;Kategori_Gizi
 7827;Gizi Kurang
 7744;Gizi Lebih
 3013;Gizi Lebih
-7672;Gizi Baik
+7672;Gizi Kurang
 9549;Gizi Lebih
 9978;Gizi Lebih
 3081;Gizi Lebih
@@ -1851,12 +1851,12 @@ ID_Siswa;Kategori_Gizi
 3444;Gizi Lebih
 7736;Gizi Kurang
 834;Gizi Kurang
-6499;Gizi Baik
+6499;Gizi Kurang
 2992;Gizi Kurang
 7793;Gizi Baik
 2151;Gizi Kurang
 4023;Gizi Kurang
-7615;Gizi Baik
+7615;Gizi Kurang
 6124;Gizi Lebih
 3339;Gizi Lebih
 4344;Gizi Lebih
@@ -1919,7 +1919,7 @@ ID_Siswa;Kategori_Gizi
 9542;Gizi Kurang
 6856;Gizi Kurang
 7349;Gizi Baik
-9045;Gizi Baik
+9045;Gizi Lebih
 2129;Gizi Kurang
 2767;Gizi Lebih
 2109;Gizi Lebih
