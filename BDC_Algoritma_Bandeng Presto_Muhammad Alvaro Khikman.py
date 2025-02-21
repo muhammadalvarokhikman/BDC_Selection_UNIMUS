@@ -1,12 +1,13 @@
-import pandas as pd
-import numpy as np
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
-import tensorflow as tf
-from tensorflow import keras
+from sklearn.metrics import accuracy_score
 from tensorflow.keras import layers
+from tensorflow import keras
+import tensorflow as tf
+import xgboost as xgb
+import pandas as pd
+import numpy as np
 
-# Callback kustom untuk menghentikan pelatihan berdasarkan kondisi tertentu
 class CustomStopCallback(tf.keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs=None):
         if logs is None:
@@ -49,51 +50,47 @@ def preprocess_data(df_train, df_test):
     df_test[numerical_columns] = scaler.transform(df_test[numerical_columns])
     return df_train, df_test, label_encoder
 
-def build_model(input_shape, num_classes):
-    model = keras.Sequential([
-        layers.Dense(64, activation='relu', input_shape=(input_shape,)),
-        layers.Dropout(0.2),
-        layers.Dense(32, activation='relu'),
-        layers.Dropout(0.2),
-        layers.Dense(16, activation='relu'),
-        layers.Dense(num_classes, activation='softmax')
-    ])
-    model.compile(optimizer='adam',
-                  loss='sparse_categorical_crossentropy',
-                  metrics=['accuracy'])
-    return model
+# Fungsi load_data dan preprocess_data
+train_path = 'dataset/data_training.csv'
+test_path = 'dataset/data_testing_no_label.csv'
+sample_submission_path = 'dataset/Sample_Submission.csv'
+df_train, df_test, test_ids = load_data(train_path, test_path, sample_submission_path)
+df_train, df_test, label_encoder = preprocess_data(df_train, df_test)
 
-def train_and_evaluate(model, X_train, y_train, X_val, y_val, epochs=100, batch_size=32):
-    custom_stop_callback = CustomStopCallback()
-    history = model.fit(X_train, y_train,
-                        validation_data=(X_val, y_val),
-                        epochs=epochs,
-                        batch_size=batch_size,
-                        callbacks=[custom_stop_callback])
-    val_loss, val_acc = model.evaluate(X_val, y_val)
-    print(f"Validation Accuracy: {val_acc:.4f}")
-    return model
+# Pemisahan fitur dan target
+X = df_train.drop(columns=["Kategori_Gizi"])
+y = df_train["Kategori_Gizi"]
+
+# Split data untuk validasi
+X_train, X_valid, y_train, y_valid = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Inisialisasi model XGBoost
+model = xgb.XGBClassifier(
+    objective="multi:softmax",
+    num_class=len(y.unique()),
+    eval_metric="mlogloss",
+    use_label_encoder=False,
+    random_state=42
+)
+
+# Training model
+model.fit(X_train, y_train)
+
+# Prediksi
+y_pred = model.predict(X_valid)
+
+# Evaluasi accuracy
+accuracy = accuracy_score(y_valid, y_pred)
+print(f"Accuracy: {accuracy:.4f}")
 
 def predict_and_save(model, df_test, test_ids, label_encoder, output_file):
-    y_pred = np.argmax(model.predict(df_test), axis=1)
-    y_pred_labels = label_encoder.inverse_transform(y_pred)
-    submission = pd.DataFrame({"ID": test_ids, "Kategori_Gizi_Prediksi": y_pred_labels})
-    submission.to_csv(output_file, index=False, sep=';')
+    y_test_pred = model.predict(df_test)
+    y_test_pred_labels = label_encoder.inverse_transform(y_test_pred)
+    submission = pd.DataFrame({"ID": test_ids, "Kategori_Gizi_Prediksi": y_test_pred_labels})
+    submission.to_csv(output_file, index=False, sep=',')
     print(f"Submission file saved as {output_file}")
 
 if __name__ == '__main__':
-    train_path = "dataset/data_training.csv"
-    test_path = "dataset/data_testing_no_label.csv"
-    sample_submission_path = "dataset/Sample_Submission.csv"
     output_file = "BDC_Prediksi_Bandeng Presto_Muhammad Alvaro Khikman.csv"
     model_save_path = "model.h5"
-    df_train, df_test, test_ids = load_data(train_path, test_path, sample_submission_path)
-    df_train, df_test, label_encoder = preprocess_data(df_train, df_test)
-    X = df_train.drop(columns=["Kategori_Gizi"])
-    y = df_train["Kategori_Gizi"]
-    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
-    model = build_model(X_train.shape[1], len(label_encoder.classes_))
-    model = train_and_evaluate(model, X_train, y_train, X_val, y_val)
-    model.save(model_save_path)
-    print(f"Model saved as {model_save_path}")
     predict_and_save(model, df_test, test_ids, label_encoder, output_file)
